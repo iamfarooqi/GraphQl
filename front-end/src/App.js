@@ -1,20 +1,23 @@
+
+import AddClient from './components/AddClient';
+import GetClient from './components/GetClient';
+import { Routes, Link, Route } from "react-router-dom";
 import './App.css';
 
 function App() {
   return (
-    <div >
-      <form className="form">
-        <label>Name:</label>
-        <input type="text" name="name" />
+    <div className="form">
 
-        <label>Email:</label>
-        <input type="email" name="name" />
+      <Link to='/add-Client'>Add Client</Link>
+      <Link to='/get-Client'>Get Client</Link>
+      <Routes>
+        <Route>
+          <Route path="/add-Client" element={<AddClient />} />
+          <Route path="/get-Client" element={<GetClient />} />
+        </Route>
+      </Routes>
+      {/* <AddClient /> */}
 
-        <label>Phone:</label>
-        <input type="phone" name="name" />
-
-        <button>Add Data</button>
-      </form>
     </div>
   );
 }
